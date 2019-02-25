@@ -1,2 +1,14 @@
 server:
   port: 8081
+# 用户家目录下
+#spring.datasource.url = jdbc:h2:file:~/.h2/testdb
+spring:
+  datasource:
+    url: jdbc:h2:file:D:\\h2\\db\\testdb
+    data-username: sa
+    data-password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
