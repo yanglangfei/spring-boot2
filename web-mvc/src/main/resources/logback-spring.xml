@@ -71,7 +71,7 @@
 
 
 
-  <!--  <logger name="com.lego" level="debug">
+  <!--  <logger name="com.yanglf" level="debug">
         <appender-ref ref="fileLog" />
     </logger>-->
 
