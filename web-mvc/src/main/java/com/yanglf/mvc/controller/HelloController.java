@@ -4,6 +4,7 @@ import com.yanglf.mvc.model.User;
 import com.yanglf.mvc.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,7 +38,9 @@ public class HelloController {
 
 
     @RequestMapping("query")
-    public List<User>  query(){
+    @Cacheable(value = "user",key = "'user_'.concat(#root.args[0])")
+    public List<User>  query(int uuId){
+        log.info("query:"+uuId);
         List<User> userList = userRepository.findAll(Sort.by(Sort.Direction.DESC, "createTime"));
         log.info("userList:{}",userList);
         return userList;

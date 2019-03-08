@@ -19,3 +19,17 @@ spring:
     #process-definition-location-suffixes: #流程文件格式
     #  - **.bpmn20.xml
     # - **.bpmn
+
+  redis:
+    database: 0
+    host: 192.168.101.65
+    password: admin123
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+  #cache:
+  #  type: redis

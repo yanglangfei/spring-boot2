@@ -3,6 +3,7 @@ import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * @author yanglf
@@ -12,6 +13,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  */
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @ServletComponentScan("com.yanglf.mvc.servlet")
+@EnableCaching
 public class App {
 
     public static void main(String[] args) {
