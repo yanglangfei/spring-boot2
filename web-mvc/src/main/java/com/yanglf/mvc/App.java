@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @see
  */
 @SpringBootApplication
-@ServletComponentScan("com.yanglf.mvc.servlet")
+@ServletComponentScan(basePackages = {"com.yanglf.mvc.servlet","com.yanglf.mvc.filter"})
 public class App {
 
     public static void main(String[] args) {
